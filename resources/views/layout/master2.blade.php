@@ -1,0 +1,5 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="_token" content="{{ csrf_token() }}"><title>File Management System</title>
+<link rel="stylesheet" href="{{ asset('vendor/bootstrap/bootstrap.min.css') }}">
+<link rel="stylesheet" href="{{ asset('css/file-management.css') }}">@stack('plugin-styles')@stack('style')</head>
+<body class="fm-auth-body"><script src="{{ asset('components/jquery/jquery-3.6.0.min.js') }}"></script><script src="{{ asset('vendor/bootstrap/bootstrap.bundle.min.js') }}"></script><main class="fm-auth-container" @if(!empty($config->back_img)) style="background-image:url('{{ asset('dist/img/'.$config->back_img) }}');background-size:cover" @endif>@yield('content')</main><script src="{{ asset('assets/plugins/feather-icons/feather.min.js') }}"></script><script src="{{ asset('js/file-management.js') }}"></script>@stack('plugin-scripts')@stack('custom-scripts')</body></html>

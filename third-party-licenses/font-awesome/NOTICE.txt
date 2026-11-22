@@ -1,0 +1,5 @@
+Font Awesome 4.7.0 by Dave Gandy.
+Font copyright: Dave Gandy 2016.
+Font files: SIL Open Font License 1.1, included as OFL-1.1.txt.
+CSS: MIT License, included as CODE-MIT.txt.
+Official license statement: https://fontawesome.com/v4/license/

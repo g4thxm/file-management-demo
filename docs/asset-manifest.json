@@ -1,0 +1,368 @@
+{
+  "packages": [
+    {
+      "name": "bootstrap",
+      "version": "4.6.2",
+      "metadata_url": "https://registry.npmjs.org/bootstrap/4.6.2",
+      "tarball_url": "https://registry.npmjs.org/bootstrap/-/bootstrap-4.6.2.tgz",
+      "homepage": "https://getbootstrap.com/",
+      "license": "MIT",
+      "license_files": [
+        "package/LICENSE"
+      ]
+    },
+    {
+      "name": "jquery",
+      "version": "3.6.0",
+      "metadata_url": "https://registry.npmjs.org/jquery/3.6.0",
+      "tarball_url": "https://registry.npmjs.org/jquery/-/jquery-3.6.0.tgz",
+      "homepage": "https://jquery.com",
+      "license": "MIT",
+      "license_files": [
+        "package/external/sizzle/LICENSE.txt",
+        "package/LICENSE.txt"
+      ]
+    },
+    {
+      "name": "popper.js",
+      "version": "1.16.1",
+      "metadata_url": "https://registry.npmjs.org/popper.js/1.16.1",
+      "tarball_url": "https://registry.npmjs.org/popper.js/-/popper.js-1.16.1.tgz",
+      "homepage": "https://popper.js.org/",
+      "license": "MIT",
+      "license_files": []
+    },
+    {
+      "name": "font-awesome",
+      "version": "4.7.0",
+      "metadata_url": "https://registry.npmjs.org/font-awesome/4.7.0",
+      "tarball_url": "https://registry.npmjs.org/font-awesome/-/font-awesome-4.7.0.tgz",
+      "homepage": "http://fontawesome.io/",
+      "license": "(OFL-1.1 AND MIT)",
+      "license_files": []
+    },
+    {
+      "name": "feather-icons",
+      "version": "4.28.0",
+      "metadata_url": "https://registry.npmjs.org/feather-icons/4.28.0",
+      "tarball_url": "https://registry.npmjs.org/feather-icons/-/feather-icons-4.28.0.tgz",
+      "homepage": "https://github.com/feathericons/feather#readme",
+      "license": "MIT",
+      "license_files": [
+        "package/LICENSE"
+      ]
+    },
+    {
+      "name": "select2",
+      "version": "4.0.13",
+      "metadata_url": "https://registry.npmjs.org/select2/4.0.13",
+      "tarball_url": "https://registry.npmjs.org/select2/-/select2-4.0.13.tgz",
+      "homepage": "https://select2.org",
+      "license": "MIT",
+      "license_files": [
+        "package/LICENSE.md"
+      ]
+    },
+    {
+      "name": "datatables.net",
+      "version": "1.10.23",
+      "metadata_url": "https://registry.npmjs.org/datatables.net/1.10.23",
+      "tarball_url": "https://registry.npmjs.org/datatables.net/-/datatables.net-1.10.23.tgz",
+      "homepage": "https://datatables.net",
+      "license": "MIT",
+      "license_files": [
+        "package/License.txt"
+      ]
+    },
+    {
+      "name": "datatables.net-bs4",
+      "version": "1.10.23",
+      "metadata_url": "https://registry.npmjs.org/datatables.net-bs4/1.10.23",
+      "tarball_url": "https://registry.npmjs.org/datatables.net-bs4/-/datatables.net-bs4-1.10.23.tgz",
+      "homepage": "https://datatables.net",
+      "license": "MIT",
+      "license_files": []
+    },
+    {
+      "name": "jquery-validation",
+      "version": "1.19.2",
+      "metadata_url": "https://registry.npmjs.org/jquery-validation/1.19.2",
+      "tarball_url": "https://registry.npmjs.org/jquery-validation/-/jquery-validation-1.19.2.tgz",
+      "homepage": "https://jqueryvalidation.org/",
+      "license": "MIT",
+      "license_files": [
+        "package/LICENSE.md"
+      ]
+    },
+    {
+      "name": "dropify",
+      "version": "0.2.2",
+      "metadata_url": "https://registry.npmjs.org/dropify/0.2.2",
+      "tarball_url": "https://registry.npmjs.org/dropify/-/dropify-0.2.2.tgz",
+      "homepage": "https://github.com/JeremyFagis/dropify",
+      "license": "MIT",
+      "license_files": [
+        "package/LICENCE.md"
+      ]
+    },
+    {
+      "name": "lobibox",
+      "version": "1.2.7",
+      "metadata_url": "https://registry.npmjs.org/lobibox/1.2.7",
+      "tarball_url": "https://registry.npmjs.org/lobibox/-/lobibox-1.2.7.tgz",
+      "homepage": "https://github.com/arboshiki/lobibox#readme",
+      "license": "MIT",
+      "license_files": [
+        "package/LICENSE"
+      ]
+    },
+    {
+      "name": "sweetalert2",
+      "version": "11.14.5",
+      "metadata_url": "https://registry.npmjs.org/sweetalert2/11.14.5",
+      "tarball_url": "https://registry.npmjs.org/sweetalert2/-/sweetalert2-11.14.5.tgz",
+      "homepage": "https://sweetalert2.github.io/",
+      "license": "MIT",
+      "license_files": [
+        "package/LICENSE"
+      ]
+    }
+  ],
+  "copied_assets": [
+    {
+      "package": "bootstrap",
+      "source": "package/dist/css/bootstrap.min.css",
+      "path": "vendor/bootstrap/bootstrap.min.css",
+      "sha256": "f886516f3d41e9e7bd994c7f7a39a89cafae9483f90396cb0ddeafe8d1ea5e72"
+    },
+    {
+      "package": "bootstrap",
+      "source": "package/dist/js/bootstrap.bundle.min.js",
+      "path": "vendor/bootstrap/bootstrap.bundle.min.js",
+      "sha256": "19126b874a32753d42c12dfa6c17892bfd93820a5a5100ba1b34da4d07599b49"
+    },
+    {
+      "package": "jquery",
+      "source": "package/dist/jquery.min.js",
+      "path": "components/jquery/jquery-3.6.0.min.js",
+      "sha256": "ff1523fb7389539c84c65aba19260648793bb4f5e29329d2ee8804bc37a3fe6e"
+    },
+    {
+      "package": "feather-icons",
+      "source": "package/dist/feather.min.js",
+      "path": "assets/plugins/feather-icons/feather.min.js",
+      "sha256": "5dfcdd882f92d647a26beb3d974ef2ef27b96bcef8b01abaef32b8bbb2d38ef9"
+    },
+    {
+      "package": "font-awesome",
+      "source": "package/css/font-awesome.min.css",
+      "path": "assets/plugins/font-awesome/css/font-awesome.min.css",
+      "sha256": "799aeb25cc0373fdee0e1b1db7ad6c2f6a0e058dfadaa3379689f583213190bd"
+    },
+    {
+      "package": "select2",
+      "source": "package/dist/css/select2.min.css",
+      "path": "assets/plugins/select2/select2.min.css",
+      "sha256": "15d6ad4dfdb43d0affad683e70029f97a8f8fc8637a28845009ee0542dccdf81"
+    },
+    {
+      "package": "select2",
+      "source": "package/dist/js/select2.min.js",
+      "path": "assets/plugins/select2/select2.min.js",
+      "sha256": "00501810e93307a8882a74d864e7547fd1458deea539361dc1124ac133799a4b"
+    },
+    {
+      "package": "datatables.net",
+      "source": "package/js/jquery.dataTables.js",
+      "path": "assets/plugins/datatables-net/jquery.dataTables.js",
+      "sha256": "ab679fa2da076e735d72fcd717645c575d5ca16c5e9136cca91c65a3c36c2a1b"
+    },
+    {
+      "package": "datatables.net-bs4",
+      "source": "package/js/dataTables.bootstrap4.js",
+      "path": "assets/plugins/datatables-net-bs4/dataTables.bootstrap4.js",
+      "sha256": "d94eb5111336576dd0337358695a2b8e8cd955ffcd72a5efc4e6de48c85b125c"
+    },
+    {
+      "package": "datatables.net-bs4",
+      "source": "package/css/dataTables.bootstrap4.css",
+      "path": "assets/plugins/datatables-net/dataTables.bootstrap4.css",
+      "sha256": "fb89c3f245cd36517414fd3eafe15a0a94a908bb70ef4cab6f6c331ac58bbded"
+    },
+    {
+      "package": "jquery-validation",
+      "source": "package/dist/jquery.validate.min.js",
+      "path": "assets/plugins/jquery-validation/jquery.validate.min.js",
+      "sha256": "f8110a988bd0e88b0bf2c1dcbe276d0eb34e7593b70bd2ed14fb45d87d1d3872"
+    },
+    {
+      "package": "dropify",
+      "source": "package/dist/css/dropify.min.css",
+      "path": "assets/plugins/dropify/css/dropify.min.css",
+      "sha256": "01675e54c518b702c7d3d17a647c4d82f248dfba7eb5ef2126e48ca38e0d566d"
+    },
+    {
+      "package": "dropify",
+      "source": "package/dist/js/dropify.min.js",
+      "path": "assets/plugins/dropify/js/dropify.min.js",
+      "sha256": "49469aa3943b89faf6b70c044f48b25d5cb43959ee149846562e44fdda8488b5"
+    },
+    {
+      "package": "sweetalert2",
+      "source": "package/dist/sweetalert2.min.css",
+      "path": "vendor/sweetalert/sweetalert2.min.css",
+      "sha256": "a9654cdfc4405581c0e16f130250ddb333b5851680ab4304ef2d9ef5a69bdf9e"
+    },
+    {
+      "package": "sweetalert2",
+      "source": "package/dist/sweetalert2.all.min.js",
+      "path": "vendor/sweetalert/sweetalert.all.js",
+      "sha256": "d66e2a55bb1d712535f6dba55536de4117a0d018d9896eb219f7e796bfcd26ee"
+    },
+    {
+      "package": "lobibox",
+      "source": "package/dist/css/lobibox.min.css",
+      "path": "components/lobibox/dist/css/lobibox.min.css",
+      "sha256": "1ba940a0f632a3567aa7493e66f016f845f58f3faff42bea7940df2e9fff5efd"
+    },
+    {
+      "package": "lobibox",
+      "source": "package/dist/js/notifications.min.js",
+      "path": "components/lobibox/dist/js/notifications.min.js",
+      "sha256": "38a1184f9b8cbb55e55b455b80dc2ac48253c50cc3e2578b2a3e8e47d820c41a"
+    },
+    {
+      "package": "font-awesome",
+      "source": "package/fonts/fontawesome-webfont.eot",
+      "path": "assets/plugins/font-awesome/fonts/fontawesome-webfont.eot",
+      "sha256": "7bfcab6db99d5cfbf1705ca0536ddc78585432cc5fa41bbd7ad0f009033b2979"
+    },
+    {
+      "package": "font-awesome",
+      "source": "package/fonts/fontawesome-webfont.svg",
+      "path": "assets/plugins/font-awesome/fonts/fontawesome-webfont.svg",
+      "sha256": "ad6157926c1622ba4e1d03d478f1541368524bfc46f51e42fe0d945f7ef323e4"
+    },
+    {
+      "package": "font-awesome",
+      "source": "package/fonts/fontawesome-webfont.ttf",
+      "path": "assets/plugins/font-awesome/fonts/fontawesome-webfont.ttf",
+      "sha256": "aa58f33f239a0fb02f5c7a6c45c043d7a9ac9a093335806694ecd6d4edc0d6a8"
+    },
+    {
+      "package": "font-awesome",
+      "source": "package/fonts/fontawesome-webfont.woff",
+      "path": "assets/plugins/font-awesome/fonts/fontawesome-webfont.woff",
+      "sha256": "ba0c59deb5450f5cb41b3f93609ee2d0d995415877ddfa223e8a8a7533474f07"
+    },
+    {
+      "package": "font-awesome",
+      "source": "package/fonts/fontawesome-webfont.woff2",
+      "path": "assets/plugins/font-awesome/fonts/fontawesome-webfont.woff2",
+      "sha256": "2adefcbc041e7d18fcf2d417879dc5a09997aa64d675b7a3c4b6ce33da13f3fe"
+    },
+    {
+      "package": "dropify",
+      "source": "package/dist/fonts/dropify.eot",
+      "path": "assets/plugins/dropify/fonts/dropify.eot",
+      "sha256": "3e77179801eecf0550561526ad687de97567a3ecb814944b645733a41d660712"
+    },
+    {
+      "package": "dropify",
+      "source": "package/dist/fonts/dropify.svg",
+      "path": "assets/plugins/dropify/fonts/dropify.svg",
+      "sha256": "4e7273920d78a93d302351dfb37238567fba5db4be5066ae7951f675796204fc"
+    },
+    {
+      "package": "dropify",
+      "source": "package/dist/fonts/dropify.ttf",
+      "path": "assets/plugins/dropify/fonts/dropify.ttf",
+      "sha256": "8d7f9685b0c938ddefdf84a0285d694f2ec3faec637d11a3f8cf4b6e44961a04"
+    },
+    {
+      "package": "dropify",
+      "source": "package/dist/fonts/dropify.woff",
+      "path": "assets/plugins/dropify/fonts/dropify.woff",
+      "sha256": "3cc36619fb3ad9232c8b05fb426e463cd3c5346a315d16881a2a937b903c424a"
+    },
+    {
+      "package": "lobibox",
+      "source": "package/dist/sounds/sound1.ogg",
+      "path": "components/lobibox/dist/sounds/sound1.ogg",
+      "sha256": "d081da0725d9041dfd81c631f73c9339d6b79823d3c4fc99bda89f335e68a351"
+    },
+    {
+      "package": "lobibox",
+      "source": "package/dist/sounds/sound2.ogg",
+      "path": "components/lobibox/dist/sounds/sound2.ogg",
+      "sha256": "0f486e7226b1dbf38c01ba905397dbc91e3dda9eb16d96a0f054dff46796fadf"
+    },
+    {
+      "package": "lobibox",
+      "source": "package/dist/sounds/sound3.ogg",
+      "path": "components/lobibox/dist/sounds/sound3.ogg",
+      "sha256": "622a9c054b2b796b235dccf4b09874ef67dda15dd475a0c86479f6658a1cbb83"
+    },
+    {
+      "package": "lobibox",
+      "source": "package/dist/sounds/sound4.ogg",
+      "path": "components/lobibox/dist/sounds/sound4.ogg",
+      "sha256": "0d4106570d60a8a7bc25c31b75c33376e23a507b35b12f40a7f338dae9a7b67f"
+    },
+    {
+      "package": "lobibox",
+      "source": "package/dist/sounds/sound5.ogg",
+      "path": "components/lobibox/dist/sounds/sound5.ogg",
+      "sha256": "46207480ab8f3ae75fb8167c8ed04fa9443f5fcdd0a667c205aefd9a39351487"
+    },
+    {
+      "package": "lobibox",
+      "source": "package/dist/sounds/sound6.ogg",
+      "path": "components/lobibox/dist/sounds/sound6.ogg",
+      "sha256": "a266fd3ce86a9d375d11ee0eccbcd078302a1609556f6909ed72beea26657a82"
+    }
+  ],
+  "public_files_kept": [
+    ".htaccess",
+    "assets/js/data-table.js",
+    "assets/js/select2.js",
+    "assets/plugins/datatables-net-bs4/dataTables.bootstrap4.js",
+    "assets/plugins/datatables-net/dataTables.bootstrap4.css",
+    "assets/plugins/datatables-net/jquery.dataTables.js",
+    "assets/plugins/dropify/css/dropify.min.css",
+    "assets/plugins/dropify/fonts/dropify.eot",
+    "assets/plugins/dropify/fonts/dropify.svg",
+    "assets/plugins/dropify/fonts/dropify.ttf",
+    "assets/plugins/dropify/fonts/dropify.woff",
+    "assets/plugins/dropify/js/dropify.min.js",
+    "assets/plugins/feather-icons/feather.min.js",
+    "assets/plugins/font-awesome/css/font-awesome.min.css",
+    "assets/plugins/font-awesome/fonts/fontawesome-webfont.eot",
+    "assets/plugins/font-awesome/fonts/fontawesome-webfont.svg",
+    "assets/plugins/font-awesome/fonts/fontawesome-webfont.ttf",
+    "assets/plugins/font-awesome/fonts/fontawesome-webfont.woff",
+    "assets/plugins/font-awesome/fonts/fontawesome-webfont.woff2",
+    "assets/plugins/jquery-validation/jquery.validate.min.js",
+    "assets/plugins/select2/select2.min.css",
+    "assets/plugins/select2/select2.min.js",
+    "components/jquery/jquery-3.6.0.min.js",
+    "components/lobibox/dist/css/lobibox.min.css",
+    "components/lobibox/dist/js/notifications.min.js",
+    "components/lobibox/dist/sounds/sound1.ogg",
+    "components/lobibox/dist/sounds/sound2.ogg",
+    "components/lobibox/dist/sounds/sound3.ogg",
+    "components/lobibox/dist/sounds/sound4.ogg",
+    "components/lobibox/dist/sounds/sound5.ogg",
+    "components/lobibox/dist/sounds/sound6.ogg",
+    "css/barcodeprint.css",
+    "css/file-management.css",
+    "index.php",
+    "js/file-management.js",
+    "robots.txt",
+    "template/label.prn",
+    "vendor/bootstrap/bootstrap.bundle.min.js",
+    "vendor/bootstrap/bootstrap.min.css",
+    "vendor/sweetalert/sweetalert.all.js",
+    "vendor/sweetalert/sweetalert2.min.css"
+  ]
+}

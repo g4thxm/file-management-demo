@@ -1,0 +1,8 @@
+<aside class="fm-sidebar" id="fm-navigation"><div class="fm-brand-row"><a href="{{ route('home') }}" class="fm-brand">@if(!empty($anotherArray->front_logo))<img src="{{ asset('dist/img/'.$anotherArray->front_logo) }}" alt="File Management">@else Files @endif</a><button class="fm-icon-button" data-fm-toggle aria-label="Toggle navigation"><i data-feather="menu"></i></button></div>
+<nav class="fm-navigation" aria-label="Main navigation">@foreach($menus as $menu)
+@if($menu['id'] == 1)<a class="fm-menu-link {{ ($activemenu[0] ?? null) == $menu['id'] ? 'is-active' : '' }}" href="{{ route('home') }}"><i data-feather="home"></i><span>{{ $menu['title'] }}</span></a>
+@elseif(count($menu['submenus']))
+<button class="fm-menu-link {{ ($activemenu[0] ?? null) == $menu['id'] ? 'is-active' : '' }}" data-toggle="collapse" data-target="#fm-group-{{ $menu['id'] }}" aria-expanded="{{ ($activemenu[0] ?? null) == $menu['id'] ? 'true' : 'false' }}"><i data-feather="{{ $menu['icon'] }}"></i><span>{{ $menu['title'] }}</span><i class="fm-chevron" data-feather="chevron-down"></i></button>
+<div class="collapse {{ ($activemenu[0] ?? null) == $menu['id'] ? 'show' : '' }}" id="fm-group-{{ $menu['id'] }}">@foreach($menu['submenus'] as $submenu)<a class="fm-submenu-link {{ ($activemenu[1] ?? null) == $submenu->id ? 'is-active' : '' }}" href="{{ url($submenu->link) }}">{{ $submenu->title }}</a>@endforeach</div>
+@else<a class="fm-menu-link" href="{{ url($menu['link']) }}"><i data-feather="folder"></i><span>{{ $menu['title'] }}</span></a>@endif
+@endforeach</nav></aside><button class="fm-scrim" data-fm-toggle aria-label="Close navigation"></button>
