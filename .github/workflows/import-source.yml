@@ -16,13 +16,15 @@ jobs:
         run: |
           python3 <<'PYTHON'
           from pathlib import Path, PurePosixPath
-          import hashlib, zipfile, stat
-          candidates = [p for p in Path('.').glob('*.zip') if p.is_file() and hashlib.sha256(p.read_bytes()).hexdigest() == '0093099f06ff1f39e4d3fe87ede6e73ed08e8bb4c4d39bc865cecd0b4514a792']
-          assert len(candidates) == 1, 'Exactly one verified prepared archive is required'
-          archive = candidates[0]
+          import hashlib, zipfile, stat, base64, io
+          parts = [Path('source-import') / f'part-{i:02}.b64' for i in range(10)]
+          assert set(Path('source-import').iterdir()) == set(parts), 'Unexpected import parts'
+          encoded = ''.join(''.join(p.read_text(encoding='ascii').split()) for p in parts)
+          payload = base64.b64decode(encoded, validate=True)
+          assert hashlib.sha256(payload).hexdigest() == '0093099f06ff1f39e4d3fe87ede6e73ed08e8bb4c4d39bc865cecd0b4514a792', 'Unexpected prepared source checksum'
           prefix = 'file-management-public-source/'
           files = {}
-          with zipfile.ZipFile(archive) as z:
+          with zipfile.ZipFile(io.BytesIO(payload)) as z:
               assert z.testzip() is None, 'Corrupt source archive'
               assert len(z.infolist()) == 360, 'Unexpected source entry count'
               assert sum(info.file_size for info in z.infolist()) < 50_000_000, 'Unexpected expanded size'
@@ -43,8 +45,10 @@ jobs:
               target = Path(rel)
               target.parent.mkdir(parents=True, exist_ok=True)
               target.write_bytes(data)
-          archive.unlink()
-          print('Verified and imported', len(files), 'source files; removed staging ZIP.')
+          for p in parts:
+              p.unlink()
+          Path('source-import').rmdir()
+          print('Verified and imported', len(files), 'source files; removed staging parts.')
           PYTHON
       - name: Commit the expanded source
         shell: bash
