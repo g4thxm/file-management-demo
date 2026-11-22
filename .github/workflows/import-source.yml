@@ -1,0 +1,57 @@
+name: Import prepared File Management source
+'on':
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  import-source:
+    if: github.repository == 'g4thxm/file-management-demo' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Check out only this repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+      - name: Verify and expand the prepared source
+        shell: bash
+        run: |
+          python3 <<'PYTHON'
+          from pathlib import Path, PurePosixPath
+          import hashlib, zipfile, stat
+          candidates = [p for p in Path('.').glob('*.zip') if p.is_file() and hashlib.sha256(p.read_bytes()).hexdigest() == '0093099f06ff1f39e4d3fe87ede6e73ed08e8bb4c4d39bc865cecd0b4514a792']
+          assert len(candidates) == 1, 'Exactly one verified prepared archive is required'
+          archive = candidates[0]
+          prefix = 'file-management-public-source/'
+          files = {}
+          with zipfile.ZipFile(archive) as z:
+              assert z.testzip() is None, 'Corrupt source archive'
+              assert len(z.infolist()) == 360, 'Unexpected source entry count'
+              assert sum(info.file_size for info in z.infolist()) < 50_000_000, 'Unexpected expanded size'
+              for info in z.infolist():
+                  assert info.filename.startswith(prefix), 'Unexpected archive root'
+                  rel = info.filename[len(prefix):]
+                  path = PurePosixPath(rel)
+                  assert rel and not path.is_absolute() and '..' not in path.parts, 'Unsafe archive path'
+                  assert '.git' not in path.parts and '.github' not in path.parts, 'Unexpected repository metadata'
+                  assert not stat.S_ISLNK(info.external_attr >> 16), 'Symlinks are not allowed'
+                  assert rel not in files, 'Duplicate archive path'
+                  files[rel] = z.read(info)
+              manifest = dict(line.split('  ', 1)[::-1] for line in files['SHA256SUMS.txt'].decode().splitlines())
+              assert set(files) == set(manifest) | {'SHA256SUMS.txt'}, 'Manifest coverage mismatch'
+              for rel, digest in manifest.items():
+                  assert hashlib.sha256(files[rel]).hexdigest() == digest, 'Source file checksum mismatch'
+          for rel, data in files.items():
+              target = Path(rel)
+              target.parent.mkdir(parents=True, exist_ok=True)
+              target.write_bytes(data)
+          archive.unlink()
+          print('Verified and imported', len(files), 'source files; removed staging ZIP.')
+          PYTHON
+      - name: Commit the expanded source
+        shell: bash
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add --force --all
+          git diff --cached --quiet && exit 0
+          git commit -m 'Publish cleaned File Management source'
+          git push origin HEAD:main
